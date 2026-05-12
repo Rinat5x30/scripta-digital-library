@@ -1,24 +1,24 @@
-# 📚 Scripta - Digital Library Platform
+# Scripta - Digital Library Platform
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-4.0+-green?style=flat-square&logo=django)](https://www.djangoproject.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-**Scripta** — это современная платформа цифровой библиотеки, разработанная на Django. Она предоставляет удобный интерфейс для просмотра, поиска и управления коллекцией электронных книг.
+**Scripta** is a modern digital library platform built with Django. It provides a clean interface for browsing, searching, and managing a collection of e-books.
 
-## 🌟 Основные возможности
+## Features
 
-- 📖 **Каталог книг** — Полнофункциональный каталог с фильтрацией по жанрам, языкам и рейтингу
-- 🔍 **Поиск** — Быстрый поиск по названию и автору
-- ⭐ **Рейтинговая система** — Оценка книг и просмотр отзывов
-- 🌙 **Темная тема** — Поддержка светлой и темной темы интерфейса
-- 🌐 **Многоязычность** — Поддержка русского и английского языков
-- 📱 **Адаптивный дизайн** — Оптимизирован для мобильных устройств
-- 📕 **PDF Читатель** — Встроенный просмотр PDF-документов
-- 💬 **Система обратной связи** — Форма для отправки отзывов и предложений
-- 🎨 **Современный UI** — Красивый и интуитивный интерфейс с CSS переменными
+- **Book Catalog** — Full-featured catalog with filtering by genre, language, and rating
+- **Search** — Fast search by title and author
+- **Rating System** — Rate books and view reviews
+- **Dark Mode** — Light and dark theme support
+- **Multilingual** — Russian and English language support
+- **Responsive Design** — Optimized for mobile devices
+- **PDF Reader** — Built-in PDF viewer
+- **Feedback System** — Form for submitting feedback and suggestions
+- **Modern UI** — Clean and intuitive interface with CSS variables
 
-## 🛠 Технологический стек
+## Tech Stack
 
 ### Backend
 - **Framework**: Django 4.0+
@@ -28,30 +28,30 @@
 - **CORS**: django-cors-headers
 
 ### Frontend
-- **HTML5** & **CSS3** с переменными для теминга
-- **Vanilla JavaScript** для интерактивности
-- **Responsive Design** с mobile-first подходом
+- **HTML5** & **CSS3** with theming variables
+- **Vanilla JavaScript** for interactivity
+- **Responsive Design** with mobile-first approach
 
 ### Deployment
 - **Railway** / **Render** (cloud hosting)
 - **GitHub Actions** (CI/CD)
 
-## 📋 Требования
+## Requirements
 
 - Python 3.9+
-- pip или poetry
+- pip
 - Git
 
-## 🚀 Установка и запуск
+## Installation
 
-### 1. Клонирование репозитория
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/scripta.git
-cd scripta
+git clone https://github.com/Rinat5x30/scripta-digital-library.git
+cd scripta-digital-library
 ```
 
-### 2. Создание виртуального окружения
+### 2. Create a virtual environment
 
 ```bash
 # Windows
@@ -63,21 +63,21 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Установка зависимостей
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Конфигурация переменных окружения
+### 4. Configure environment variables
 
-Создайте файл `.env` в корневой папке проекта:
+Create a `.env` file in the project root:
 
 ```bash
 cp .env.example .env
 ```
 
-Отредактируйте `.env`:
+Edit `.env`:
 
 ```env
 SECRET_KEY=your-secret-key-here
@@ -87,100 +87,98 @@ CORS_ALLOW_ALL_ORIGINS=True
 DATABASE_URL=sqlite:///db.sqlite3
 ```
 
-> ⚠️ **Важно**: Никогда не коммитьте файл `.env` в Git. Используйте переменные окружения на серверах.
+> **Note**: Never commit the `.env` file to Git. Use environment variables on servers.
 
-### 5. Миграции базы данных
+### 5. Run migrations
 
 ```bash
 python manage.py migrate
 ```
 
-### 6. Создание суперпользователя (опционально)
+### 6. Create a superuser (optional)
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Запуск сервера разработки
+### 7. Start the development server
 
 ```bash
 python manage.py runserver
 ```
 
-Приложение будет доступно по адресу: `http://localhost:8000`
+The app will be available at `http://localhost:8000`
 
-## 📁 Структура проекта
+## Project Structure
 
 ```
 scripta/
-├── main/                      # Основное Django приложение
-│   ├── migrations/           # Миграции БД
+├── main/                      # Main Django application
+│   ├── migrations/            # Database migrations
 │   ├── static/
 │   │   └── main/
-│   │       ├── css/          # Стили (styles.css)
-│   │       ├── js/           # JavaScript (book.js, main.js, lang.js, theme.js)
-│   │       ├── img/          # Изображения
-│   │       └── fonts/        # Кастомные шрифты
+│   │       ├── css/           # Styles (styles.css)
+│   │       ├── js/            # JavaScript (book.js, main.js, lang.js, theme.js)
+│   │       ├── img/           # Images
+│   │       └── fonts/         # Custom fonts
 │   ├── templates/
-│   │   └── main/             # HTML шаблоны
-│   ├── models.py             # Модели данных (Book, Feedback)
-│   ├── views.py              # Представления
-│   ├── urls.py               # URL маршруты
-│   ├── forms.py              # Django формы
-│   └── admin.py              # Администрирование
-├── scripta/                   # Конфигурация Django проекта
-│   ├── settings.py           # Основные настройки
-│   ├── urls.py               # URL конфигурация
-│   ├── wsgi.py               # WSGI конфигурация
-│   └── asgi.py               # ASGI конфигурация
-├── media/                    # Загруженные файлы (обложки, PDF)
-├── manage.py                 # Django управление проектом
-├── requirements.txt          # Зависимости Python
-├── .env                      # Переменные окружения (git ignore)
-├── .gitignore               # Git ignore файл
-├── Procfile                 # Конфигурация для Heroku/Railway
-└── README.md                # Этот файл
+│   │   └── main/              # HTML templates
+│   ├── models.py              # Data models (Book, Feedback)
+│   ├── views.py               # Views
+│   ├── urls.py                # URL routes
+│   ├── forms.py               # Django forms
+│   └── admin.py               # Admin configuration
+├── scripta/                   # Django project configuration
+│   ├── settings.py            # Settings
+│   ├── urls.py                # URL configuration
+│   ├── wsgi.py                # WSGI configuration
+│   └── asgi.py                # ASGI configuration
+├── media/                     # Uploaded files (covers, PDFs)
+├── manage.py                  # Django management
+├── requirements.txt           # Python dependencies
+├── .env                       # Environment variables (git ignored)
+├── .gitignore                 # Git ignore
+├── Procfile                   # Heroku/Railway configuration
+└── README.md                  # This file
 ```
 
-## 🗄️ Модели данных
+## Data Models
 
 ### Book
 ```python
-- title: CharField (название)
-- author: CharField (автор)
-- published_date: PositiveIntegerField (год)
-- genre: CharField (жанр)
-- language: CharField (язык)
-- pages: PositiveIntegerField (количество страниц)
-- description: TextField (описание)
-- rating: FloatField (рейтинг)
-- cover_image: ImageField (обложка)
-- pdf_file: FileField (PDF файл)
-- status: CharField (статус: regular, new, recommended, best)
+- title: CharField
+- author: CharField
+- published_date: PositiveIntegerField
+- genre: CharField
+- language: CharField
+- pages: PositiveIntegerField
+- description: TextField
+- rating: FloatField
+- cover_image: ImageField
+- pdf_file: FileField
+- status: CharField (regular, new, recommended, best)
 ```
 
 ### Feedback
 ```python
-- user_name: CharField (имя пользователя)
-- email: EmailField (почта)
-- comment: TextField (комментарий)
-- created_at: DateTimeField (дата создания)
+- user_name: CharField
+- email: EmailField
+- comment: TextField
+- created_at: DateTimeField
 ```
 
-## 🔐 Безопасность
+## Security
 
-Проект следует лучшим практикам безопасности Django:
+- **SECRET_KEY** stored in environment variables
+- **DEBUG** disabled in production
+- **CSRF Protection** enabled
+- **CORS** configured securely
+- **HTTPS** recommended for production
+- **Security Headers** configured (X-Frame-Options, etc.)
+- **SQL Injection** protection via ORM
+- **XSS** protection built into Django
 
-- ✅ **SECRET_KEY** хранится в переменных окружения
-- ✅ **DEBUG** отключен в продакшене
-- ✅ **CSRF Protection** включена
-- ✅ **CORS** настроена безопасно
-- ✅ **HTTPS** рекомендуется для продакшена
-- ✅ **Security Headers** настроены (X-Frame-Options, etc.)
-- ✅ **SQL Injection** защита через ORM
-- ✅ **XSS** защита встроена в Django
-
-### Переменные безопасности в .env:
+### Security variables in `.env`:
 
 ```env
 SECURE_SSL_REDIRECT=True
@@ -191,98 +189,73 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 SECURE_HSTS_PRELOAD=True
 ```
 
-## 📦 Развертывание
+## Deployment
 
 ### Railway
 
-1. Свяжите репозиторий GitHub с Railway
-2. Добавьте переменные окружения в Railway Dashboard
-3. Разверните приложение
+1. Connect your GitHub repository to Railway
+2. Add environment variables in the Railway Dashboard
+3. Deploy
 
 ### Render
 
-1. Создайте новый Web Service на Render
-2. Укажите GitHub репозиторий
-3. Установите переменные окружения
-4. Разверните
+1. Create a new Web Service on Render
+2. Point to your GitHub repository
+3. Set environment variables
+4. Deploy
 
-## 🧪 Тестирование
+## Testing
 
 ```bash
-# Запуск тестов
+# Run tests
 python manage.py test
 
-# С покрытием
+# With coverage
 coverage run --source='.' manage.py test
 coverage report
 ```
 
-## 📝 Миграция данных
+## Migrations
 
 ```bash
-# Создание новой миграции
+# Create a new migration
 python manage.py makemigrations
 
-# Применение миграций
+# Apply migrations
 python manage.py migrate
 ```
 
-## 🎨 Кастомизация
+## Customization
 
-### Изменение цветовой схемы
+### Change color scheme
 
-Отредактируйте CSS переменные в `main/static/main/css/styles.css`:
+Edit CSS variables in `main/static/main/css/styles.css`:
 
 ```css
 :root {
     --primary-color: #5b21b6;
     --primary-hover: #4c1d95;
     --accent-color: #7c3aed;
-    /* и другие переменные */
+    /* other variables */
 }
 ```
 
-### Добавление нового языка
+### Add a new language
 
-Отредактируйте `main/static/main/js/lang.js` и добавьте новый язык:
+Edit `main/static/main/js/lang.js` and add a new language:
 
 ```javascript
 const translations = {
-    'en': { /* переводы */ },
-    'ru': { /* переводы */ },
-    'es': { /* добавьте новый язык */ }
+    'en': { /* translations */ },
+    'ru': { /* translations */ },
+    'es': { /* add new language */ }
 };
 ```
 
-## 🐛 Отладка
+## License
 
-```bash
-# Запуск с отладкой
-python manage.py runserver --verbosity 3
-
-# Django shell
-python manage.py shell
-
-# Просмотр журнала
-tail -f debug.log
-```
-
-## 📞 Поддержка и контакты
-
-- 📧 **Email**: support@scripta.com
-- 🌐 **Website**: https://scripta.app
-- 💬 **Issues**: Используйте GitHub Issues для отчетов об ошибках
-
-## 📄 Лицензия
-
-Этот проект лицензирован под лицензией MIT. Смотрите файл [LICENSE](LICENSE) для деталей.
-
-## 🙏 Благодарности
-
-Спасибо всем, кто способствовал развитию этого проекта!
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Made with ❤️ by Scripta Team**
-
-**Последнее обновление**: 12 мая 2026 г.
+**Made with love by Rinat**
