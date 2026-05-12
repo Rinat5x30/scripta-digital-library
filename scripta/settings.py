@@ -141,12 +141,15 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://scripta-digital-library-production.up.railway.app",
+    "https://scripta.up.railway.app",
     "https://*.up.railway.app",
     "https://rinataghayev.ru",
     "https://www.rinataghayev.ru",
     "http://localhost:8000",
 ]
+
+# Railway terminates SSL at the proxy — tell Django to trust X-Forwarded-Proto
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # ===== Security Settings =====
 # HTTPS and SSL
